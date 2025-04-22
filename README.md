@@ -1,2 +1,6 @@
 # A-Study-of-Word-Embedding-Models-for-Measuring-Topic-Coherence
 This repository provides code for evaluating topic coherence using word embeddings. It compares models like Word2Vec, FastText, GloVe, BERT, RoBERTa, ALBERT, and MPNET, showing that embedding-based metrics can outperform traditional methods in assessing the quality of topic model outputs.
+---
+This repository contains the code and experiments for the paper __"A Study of Word Embedding Models for Measuring Topic Coherence"__. The project investigates the effectiveness of embedding-based approaches for evaluating topic model coherence—a key challenge in topic modeling. While traditional metrics rely on word co-occurrence statistics or human judgments, this study focuses on semantic similarity between word embeddings as a richer and more scalable alternative.
+
+We systematically compare a wide range of word embedding models, including Word2Vec, FastText, GloVe, BERT, RoBERTa, ALBERT, and MPNET, analyzing their ability to measure the coherence of the top words in a topic. Our results show that embedding-based methods are not only competitive with, but often outperform, classical coherence metrics. This work provides a unified and comprehensive perspective on how modern word representations can be leveraged to improve topic evaluation.
