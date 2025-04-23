@@ -1,6 +1,7 @@
 framework3
-torchmetrics==1.6.0
-datasets
+torchmetrics
+datasets==3.1.0
+transformers==4.46.3
 scikit-learn
 ir-datasets
 kagglehub

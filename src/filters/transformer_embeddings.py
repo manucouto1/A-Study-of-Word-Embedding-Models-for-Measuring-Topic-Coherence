@@ -1,4 +1,3 @@
-import types
 from transformers import AutoModel, AutoTokenizer  # type: ignore
 
 from tqdm import tqdm
@@ -10,13 +9,9 @@ from framework3.base.base_types import XYData
 import torch
 
 
-def is_lambda(v):
-    return isinstance(v, types.LambdaType) and v.__name__ == "<lambda>"
-
-
 @Container.bind()
 class TransformersEmbedder(BaseFilter):
-    def __init__(self, model_path: str, input_embs=False):
+    def __init__(self, model_path: str, input_embs=True):
         super().__init__(model_path=model_path)
         self.model_path = (
             model_path  # Path to the pre-trained model (e.g., 'bert-base-uncased')

@@ -5,19 +5,19 @@ experiment_setup = {
         "topics": "data/topics20NG.txt",
         "gold": "data/gold20NG.txt",
         "texts": ng20_get_texts,
-        "results": "notebooks/data/coherence_resutls.csv",
+        "results": "data/coherence_resutls.csv",
     },
     "nyt": {
         "topics": "data/topicsNYT.txt",
         "gold": "data/goldNYT.txt",
         "texts": nyt_get_texts,
-        "results": "notebooks/data/coherence_resutls_NYT.csv",
+        "results": "data/coherence_resutls_NYT.csv",
     },
     "genomics": {
         "topics": "data/topicsGenomics.txt",
         "gold": "data/goldGenomics.txt",
         "texts": genomics_get_texts,
-        "results": "notebooks/data/coherence_resutls_genomics.csv",
+        "results": "data/coherence_resutls_genomics.csv",
     },
 }
 

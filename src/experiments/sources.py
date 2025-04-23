@@ -7,7 +7,12 @@ import kagglehub
 
 
 def wiki_get_texts():
-    dataset = load_dataset("wikipedia", language="en", date="20220301", split="train")
+    dataset = load_dataset(
+        "wikipedia",
+        language="en",
+        date="20220301",
+        split="train",
+    )
     dataset = dataset.select(random.sample(range(0, len(dataset)), 300000))  # type: ignore
     print(dataset)
     return pd.DataFrame({"text": dataset["text"]})  # type: ignore
