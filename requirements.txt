@@ -1,0 +1,7 @@
+framework3
+torchmetrics==1.6.0
+datasets
+scikit-learn
+ir-datasets
+kagglehub
+swifter

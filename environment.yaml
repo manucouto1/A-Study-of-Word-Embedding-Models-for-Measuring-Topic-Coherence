@@ -1,0 +1,9 @@
+name: topic-coherence-env
+channels:
+  - defaults
+  - conda-forge
+dependencies:
+  - python=3.11.5  # You can adjust this version as needed
+  - pip
+  - pip:
+    - -r requirements.txt
