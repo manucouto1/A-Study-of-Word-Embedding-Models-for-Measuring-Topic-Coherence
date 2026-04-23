@@ -1,9 +1,10 @@
 from src.filters.clasic_metrics import ClasicMetric
 
-from framework3 import F3Pipeline, Cached
-from framework3.plugins.optimizer.grid_optimizer import GridOptimizer
+from labchain import F3Pipeline, Cached
+from labchain.plugins.optimizer.grid_optimizer import GridOptimizer
 
-from ..metrics.corr_spearman import CorrSpearman
+from src.metrics.corr_spearman import CorrSpearman
+from src.metrics.stat_metric import BootstrapSpearmanCI, CorrPearsonWithPValue, CorrSpearmanWithPValue
 
 
 def get_pipeline(dataset: str):
@@ -15,8 +16,9 @@ def get_pipeline(dataset: str):
                         "model_path": ["c_npmi", "u_mass", "c_v", "c_uci"],
                         "sim_f_name": [dataset],
                     }
-                )
+                ),
+                cache_filter=False
             ),
         ],
-        metrics=[CorrSpearman()],
+        metrics=[CorrSpearman(),CorrSpearmanWithPValue(), BootstrapSpearmanCI()],
     ).optimizer(GridOptimizer(scorer=CorrSpearman()))

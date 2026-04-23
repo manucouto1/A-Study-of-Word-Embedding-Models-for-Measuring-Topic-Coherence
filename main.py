@@ -1,16 +1,22 @@
+from operator import index
+from pathlib import Path
 from src.experiments.experiment_1 import get_pipeline as pipe1
 from src.experiments.experiment_2 import get_pipeline as pipe2
 from src.experiments.experiment_3 import get_pipeline as pipe3
 from src.experiments.configs import experiment_setup
 
-from framework3.plugins.pipelines.parallel.parallel_mono_pipeline import MonoPipeline
-from framework3 import XYData
+from labchain.plugins.pipelines.parallel.parallel_mono_pipeline import MonoPipeline
+from labchain import XYData
 from rich import print
 import pandas as pd
 
+pd.set_option('display.max_rows', None)
+pd.set_option('display.max_columns', None)
+pd.set_option('display.max_colwidth', None)  # o un número grande
+
 
 def get_pipeline(dataset):
-    return MonoPipeline(filters=[pipe1(), pipe2(), pipe3(dataset), pipe3("wiki")])
+    return MonoPipeline(filters=[pipe1(),  pipe2(), pipe3(dataset), pipe3("wiki")])
 
 
 def experiments():
@@ -31,31 +37,14 @@ def experiments():
         gs_pipeline = get_pipeline(k)
         gs_pipeline.fit(X_data, Y_data)
 
-        for filter in gs_pipeline.filters:
+        for pipe_id, filter in enumerate(gs_pipeline.filters):
             res = filter._results
-
-            params_dfs = []
-            for col in res.drop(columns=["score"]).columns:
-                params_dfs.append(res[col].apply(pd.Series))
-
-            df_flat = pd.concat(
-                [
-                    *params_dfs,
-                    res.drop(columns=res.columns[~res.columns.isin(["score"])]),
-                ],
-                axis=1,
-            )
-            df_flat["dataset"] = k
-            results.append(df_flat)
-    return pd.concat(results)
+            path = Path(f"results/{k}/{pipe_id}.csv")
+            path.parent.mkdir(parents=True, exist_ok=True)
+            res.to_csv(f"results/{k}/{pipe_id}.csv", index=False)                
+            
 
 
-final = experiments()
+experiments()
 
-clasic = final.loc[~final["sim_f_name"].isin(["COSINE", "LINEAR"])]
-embeds = final.loc[final["sim_f_name"].isin(["COSINE", "LINEAR"])]
 
-print("Classic metrics:")
-print(clasic.groupby(["dataset", "model_path", "sim_f_name"])["score"].mean())
-print("Embedding based mertics:")
-print(embeds.groupby(["dataset", "model_path", "sim_f_name"])["score"].mean())

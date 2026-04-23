@@ -1,0 +1,5 @@
+ClasicMetric,score,CorrSpearmanWithPValue,BootstrapSpearmanCI
+"{'model_path': 'c_npmi', 'sim_f_name': 'genomics'}",0.4850571922771845,3.146986746872079e-07,0.3020420262425675
+"{'model_path': 'c_v', 'sim_f_name': 'genomics'}",0.4758568998595958,5.625899602825722e-07,0.2912628613434548
+"{'model_path': 'c_uci', 'sim_f_name': 'genomics'}",0.4661461473535637,1.0200496095880082e-06,0.27207009781588604
+"{'model_path': 'u_mass', 'sim_f_name': 'genomics'}",0.40976132652540365,2.3003525174177946e-05,0.3099384950740611

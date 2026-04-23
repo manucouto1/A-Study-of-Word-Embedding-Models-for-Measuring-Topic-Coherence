@@ -1,9 +1,10 @@
-from framework3 import F3Pipeline, Cached
-from framework3.plugins.optimizer.grid_optimizer import GridOptimizer
+from labchain import F3Pipeline, Cached
+from labchain.plugins.optimizer import GridOptimizer
 
-from ..filters.transformer_embeddings import TransformersEmbedder
-from ..filters.per_topic_mean_sim import PerTopicMeanSimilarity
-from ..metrics.corr_spearman import CorrSpearman
+from src.filters.transformer_embeddings import TransformersEmbedder
+from src.filters.per_topic_mean_sim import PerTopicMeanSimilarity
+from src.metrics.corr_spearman import CorrSpearman
+from src.metrics.stat_metric import BootstrapSpearmanCI, CorrSpearmanWithPValue
 
 
 def get_pipeline():
@@ -19,9 +20,10 @@ def get_pipeline():
                             "albert-base-v2",
                         ],
                     }
-                )
+                ),
+                cache_filter=False,
             ),
             PerTopicMeanSimilarity("COSINE").grid({"sim_f_name": ["COSINE", "LINEAR"]}),
         ],
-        metrics=[CorrSpearman()],
+        metrics=[CorrSpearman(),CorrSpearmanWithPValue(), BootstrapSpearmanCI()],
     ).optimizer(GridOptimizer(scorer=CorrSpearman()))

@@ -1,0 +1,5 @@
+ClasicMetric,score,CorrSpearmanWithPValue,BootstrapSpearmanCI
+"{'model_path': 'c_v', 'sim_f_name': 'wiki'}",0.8043402005999829,6.928220764806565e-24,0.14240744267314975
+"{'model_path': 'c_npmi', 'sim_f_name': 'wiki'}",0.8040281291330199,7.430514371638184e-24,0.15829728337020144
+"{'model_path': 'c_uci', 'sim_f_name': 'wiki'}",0.784649691309483,4.550907248385843e-22,0.1709310852311231
+"{'model_path': 'u_mass', 'sim_f_name': 'wiki'}",0.5248081854421329,2.0824433915571238e-08,0.2666182620635547

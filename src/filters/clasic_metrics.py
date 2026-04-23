@@ -1,7 +1,7 @@
 import swifter  # noqa: F401
 from typing import List, cast
-from framework3 import Container, XYData
-from framework3.base import BaseFilter
+from labchain import Container, XYData
+from labchain.base import BaseFilter
 from gensim.corpora.dictionary import Dictionary
 from gensim.models import CoherenceModel
 from gensim.utils import simple_preprocess

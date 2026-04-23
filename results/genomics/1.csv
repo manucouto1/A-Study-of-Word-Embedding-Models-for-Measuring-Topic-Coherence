@@ -1,0 +1,7 @@
+GensimEmbedder,PerTopicFixedCosineMeanSim,score,CorrSpearmanWithPValue,BootstrapSpearmanCI
+{'model_path': 'glove-wiki-gigaword-300'},{'sim_f_name': 'COSINE'},0.7450195017893149,6.261682291310432e-19,0.19563100720428628
+{'model_path': 'glove-wiki-gigaword-300'},{'sim_f_name': 'LINEAR'},0.7410138914482367,1.207124418950905e-18,0.1803088060149497
+{'model_path': 'fasttext-wiki-news-subwords-300'},{'sim_f_name': 'COSINE'},0.6703902368589127,2.3648528590077975e-14,0.26122893819599247
+{'model_path': 'word2vec-google-news-300'},{'sim_f_name': 'LINEAR'},0.6467889645344194,3.610347706268703e-13,0.23400992933512432
+{'model_path': 'word2vec-google-news-300'},{'sim_f_name': 'COSINE'},0.6199868071847464,6.058037352387717e-12,0.2591575857315503
+{'model_path': 'fasttext-wiki-news-subwords-300'},{'sim_f_name': 'LINEAR'},0.5803570880831354,2.474404398970454e-10,0.30815461204027633

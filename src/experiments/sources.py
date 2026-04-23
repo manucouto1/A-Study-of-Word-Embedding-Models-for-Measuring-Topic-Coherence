@@ -12,6 +12,7 @@ def wiki_get_texts():
         language="en",
         date="20220301",
         split="train",
+        trust_remote_code=True,
     )
     dataset = dataset.select(random.sample(range(0, len(dataset)), 300000))  # type: ignore
     print(dataset)
@@ -33,7 +34,7 @@ def genomics_get_texts():
     qrels: pd.DataFrame = load_dataset(
         "irds/medline_2004_trec-genomics-2005", "qrels", trust_remote_code=True
     ).to_pandas()  # type: ignore
-    print(qrels)  # type: ignore
+    
     sample = docs.loc[docs.doc_id.isin(qrels.doc_id.tolist())]  # type: ignore
 
     return pd.DataFrame({"text": sample.title + sample.abstract})

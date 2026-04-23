@@ -1,8 +1,9 @@
-framework3
+framework3==1.2.1
 torchmetrics
-datasets==3.1.0
-transformers==4.46.3
+datasets==4.5.0
+transformers==5.0.0
 scikit-learn
 ir-datasets
 kagglehub
 swifter
+pulp

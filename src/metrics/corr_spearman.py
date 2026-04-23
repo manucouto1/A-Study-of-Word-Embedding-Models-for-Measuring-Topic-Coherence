@@ -1,4 +1,4 @@
-from framework3 import Container, BaseMetric, XYData
+from labchain import Container, BaseMetric, XYData
 from scipy.stats import spearmanr
 import numpy as np
 

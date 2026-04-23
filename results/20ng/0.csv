@@ -1,0 +1,9 @@
+TransformersEmbedder,PerTopicMeanSimilarity,score,CorrSpearmanWithPValue,BootstrapSpearmanCI
+{'model_path': 'microsoft/mpnet-base'},{'sim_f_name': 'LINEAR'},0.5922696529672767,8.552435722661384e-11,0.31692392354781845
+{'model_path': 'albert-base-v2'},{'sim_f_name': 'LINEAR'},0.5780203242287135,3.032554283739614e-10,0.29319732745010235
+{'model_path': 'roberta-base'},{'sim_f_name': 'LINEAR'},0.5511924020486433,2.8056657255257152e-09,0.311644665884076
+{'model_path': 'albert-base-v2'},{'sim_f_name': 'COSINE'},0.41351900569984185,1.9008507343740155e-05,0.39481262311728843
+{'model_path': 'microsoft/mpnet-base'},{'sim_f_name': 'COSINE'},0.3694668843781763,0.0001549589975603813,0.395051487816905
+{'model_path': 'roberta-base'},{'sim_f_name': 'COSINE'},0.03975508629506379,0.6945351800812872,0.4174200031789681
+{'model_path': 'bert-base-uncased'},{'sim_f_name': 'LINEAR'},-0.2075137376692755,0.03829754561699241,0.41181807834887396
+{'model_path': 'bert-base-uncased'},{'sim_f_name': 'COSINE'},-0.3651698493515746,0.0001872256895013593,0.3452986276049048

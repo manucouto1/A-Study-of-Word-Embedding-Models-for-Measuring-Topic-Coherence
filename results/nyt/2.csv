@@ -1,0 +1,5 @@
+ClasicMetric,score,CorrSpearmanWithPValue,BootstrapSpearmanCI
+"{'model_path': 'c_npmi', 'sim_f_name': 'nyt'}",0.8000072083086873,1.8107392314966653e-23,0.17070962574923643
+"{'model_path': 'c_uci', 'sim_f_name': 'nyt'}",0.7680018788218734,1.1279210391682755e-20,0.20144195321368608
+"{'model_path': 'u_mass', 'sim_f_name': 'nyt'}",0.6571684970550485,1.1218231111613384e-13,0.24801988990320234
+"{'model_path': 'c_v', 'sim_f_name': 'nyt'}",0.6412708563630234,6.600283468857847e-13,0.2635600832635669
